@@ -5,7 +5,7 @@ services:
     mem_limit: 128m
     hostname: client
   server:
-    image: "spg51/lab11:fib-server"
+    image: "xlpnsk/lab11:fib-server"
     mem_limit: 128m
     hostname: api
     environment:
@@ -17,14 +17,14 @@ services:
       - PGPASSWORD=$PGPASSWORD
       - PGPORT=$PGPORT
   worker:
-    image: "spg51/lab11:fib-worker"
+    image: "xlpnsk/lab11:fib-worker"
     mem_limit: 128m
     hostname: worker
     environment:
       - REDIS_HOST=$REDIS_HOST
       - REDIS_PORT=$REDIS_PORT
   nginx:
-    image: "spg51/lab11:fib-nginx"
+    image: "xlpnsk/lab11:fib-nginx"
     mem_limit: 128m
     hostname: nginx
     ports:
